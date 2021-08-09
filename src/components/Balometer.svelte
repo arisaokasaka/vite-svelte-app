@@ -22,8 +22,8 @@
   .balometer-container {
     display: flex;
     justify-content: space-between;
-    max-width: 16rem;
-    background-color: darkblue;
+    width: 100%;
+    background-color: teal;
     color: white;
     border-radius: 8px;
     padding: 32px 16px;
