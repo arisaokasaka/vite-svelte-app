@@ -1,0 +1,16 @@
+{
+    "barometer": {
+        "twenties_generation": {
+            "number": 240,
+            "percentage": 23.0
+        },
+        "passed": {
+            "number": 120,
+            "percentage": 12.0
+        },
+        "agreement": {
+            "number": 83,
+            "percentage": 8.0
+        }
+    }
+}

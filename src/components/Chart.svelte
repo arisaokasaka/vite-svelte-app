@@ -1,5 +1,4 @@
 <div class="chart-container">
-  <!-- <table border="1"> -->
   <table>
     <tr><td /></tr>
     <tr><td /></tr>
@@ -19,7 +18,7 @@
   .chart-container {
     width: fit-content;
     padding: 12px 24px 36px 36px;
-    background-color: teal;
+    background-color: #004c4c;
     border-radius: 8px;
   }
 
@@ -50,7 +49,7 @@
     position: absolute;
     top: 21px;
     right: calc(100%);
-    color: white;
+    color: #b2d8d8;
     font-size: 8px;
     padding-right: 4px;
   }

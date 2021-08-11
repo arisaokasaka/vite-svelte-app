@@ -1,15 +1,33 @@
 <script lang="ts">
-  import Balometer from "./components/Balometer.svelte";
+  import Barometer from "./components/Barometer.svelte";
   import Chart from "./components/Chart.svelte";
 </script>
 
 <main>
   <div>
     <h1>Dashboard</h1>
-    <section class="balometers">
-      <Balometer title="title" percentage={32} number={1} />
-      <Balometer title="title" percentage={32} number={1} />
-      <Balometer title="title" percentage={32} number={1} />
+    <section class="barometers">
+      <Barometer
+        barometer_color="chocolate"
+        canvas_id="canvas_3"
+        title="title"
+        percentage={32}
+        number={1}
+      />
+      <Barometer
+        barometer_color="orange"
+        canvas_id="canvas_2"
+        title="title"
+        percentage={50}
+        number={1}
+      />
+      <Barometer
+        barometer_color="gold"
+        canvas_id="canvas_1"
+        title="title"
+        percentage={32}
+        number={1}
+      />
     </section>
     <section class="chart-area">
       <Chart />
@@ -19,7 +37,7 @@
 
 <style>
   :global(html) {
-    background-color: #7f5f00;
+    background-color: #008080;
   }
 
   :global(body) {
@@ -41,7 +59,7 @@
   h1 {
     color: white;
   }
-  .balometers {
+  .barometers {
     display: flex;
     gap: 12px;
   }

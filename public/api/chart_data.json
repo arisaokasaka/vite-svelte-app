@@ -1,0 +1,54 @@
+{
+    "chart": [
+        {
+            "month": "2020-4-1",
+            "total": 2489,
+            "core_target": 325
+        },
+        {
+            "month": "2020-5-1",
+            "total": 1217,
+            "core_target": 342
+        },
+        {
+            "month": "2020-6-1",
+            "total": 1932,
+            "core_target": 123
+        },
+        {
+            "month": "2020-7-1",
+            "total": 1239,
+            "core_target": 432
+        },
+        {
+            "month": "2020-8-1",
+            "total": 2309,
+            "core_target": 314
+        },
+        {
+            "month": "2020-9-1",
+            "total": 2230,
+            "core_target": 213
+        },
+        {
+            "month": "2020-10-1",
+            "total": 3421,
+            "core_target": 341
+        },
+        {
+            "month": "2020-11-1",
+            "total": 1238,
+            "core_target": 231
+        },
+        {
+            "month": "2020-12-1",
+            "total": 4209,
+            "core_target": 436
+        },
+        {
+            "month": "2021-1-1",
+            "total": 1239,
+            "core_target": 205
+        }
+    ]
+}
