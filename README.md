@@ -46,3 +46,12 @@ If you have state that's important to retain within a component, consider creati
 import { writable } from 'svelte/store'
 export default writable(0)
 ```
+
+# color palette
+teal gradation
+Hex	RGB
+#b2d8d8	(178,216,216)
+#66b2b2	(102,178,178)
+#008080	(0,128,128)
+#006666	(0,102,102)
+#004c4c	(0,76,76)
