@@ -77,6 +77,7 @@
 
   .title {
     color: darkgrey;
+    font-size: 0.8rem;
   }
 
   .number {
