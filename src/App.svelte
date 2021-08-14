@@ -7,7 +7,7 @@
     const res = await fetch("/api/barometer_data.json");
     const data = await res.json();
     if (res.ok) {
-      return data;
+      return data.barometer;
     } else {
       throw new Error();
     }
@@ -25,22 +25,22 @@
           barometer_color="chocolate"
           canvas_id="canvas_3"
           title="20s"
-          percentage={res.barometer.twenties.percentage}
-          number={res.barometer.twenties.number}
+          percentage={res.twenties.percentage}
+          number={res.twenties.number}
         />
         <Barometer
           barometer_color="orange"
           canvas_id="canvas_2"
           title="PASSED"
-          percentage={res.barometer.passed.percentage}
-          number={res.barometer.passed.number}
+          percentage={res.passed.percentage}
+          number={res.passed.number}
         />
         <Barometer
           barometer_color="gold"
           canvas_id="canvas_1"
           title="AGREEMENT"
-          percentage={res.barometer.agreement.percentage}
-          number={res.barometer.agreement.number}
+          percentage={res.agreement.percentage}
+          number={res.agreement.number}
         />
       {/await}
     </section>
