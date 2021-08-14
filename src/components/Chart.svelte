@@ -1,87 +1,55 @@
+<script lang="ts">
+  import { onMount } from "svelte";
+
+  let chartData = getChartData();
+
+  async function getChartData() {
+    const res = await fetch("/api/chart_data.json");
+    const data = await res.json();
+    if (res.ok) {
+      return data.chart;
+    } else {
+      throw new Error();
+    }
+  }
+
+  onMount(() => {
+    const canvas = document.getElementById("chart-canvas") as HTMLCanvasElement;
+    const ctx = canvas.getContext("2d");
+
+    // 横線
+    ctx.fillStyle = "rgba(255, 255, 255, 0.466)";
+    ctx.strokeStyle = "rgba(255, 255, 255, 0.466)";
+    ctx.lineWidth = 1;
+    for (let index = 0; index <= 10; index++) {
+      switch (index) {
+        case 0:
+          ctx.fillText(`   ${index}%`, 0, -36 * index + 400);
+          break;
+        case 10:
+          ctx.fillText(`${index}0%`, 0, -36 * index + 400);
+          break;
+        default:
+          ctx.fillText(` ${index}0%`, 0, -36 * index + 400);
+      }
+      ctx.beginPath();
+      ctx.moveTo(40, -36 * index + 396);
+      ctx.lineTo(652, -36 * index + 396);
+      ctx.closePath();
+      ctx.stroke();
+    }
+  });
+</script>
+
 <div class="chart-container">
-  <table>
-    <tr><td /></tr>
-    <tr><td /></tr>
-    <tr><td /></tr>
-    <tr><td /></tr>
-    <tr><td /></tr>
-    <tr><td /></tr>
-    <tr><td /></tr>
-    <tr><td /></tr>
-    <tr><td /></tr>
-    <tr><td /></tr>
-    <tr><td /></tr>
-  </table>
+  <canvas id="chart-canvas" width="672" height="420">chart</canvas>
 </div>
 
 <style>
   .chart-container {
     width: fit-content;
-    padding: 12px 24px 36px 36px;
+    padding: 24px;
     background-color: #004c4c;
     border-radius: 8px;
-  }
-
-  table {
-    width: 640px;
-    margin: 12px 24px;
-    border-collapse: collapse;
-  }
-
-  tr {
-    position: relative;
-    height: 28px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.466);
-  }
-
-  tr:first-child::before,
-  tr:nth-child(2)::before,
-  tr:nth-child(3)::before,
-  tr:nth-child(4)::before,
-  tr:nth-child(5)::before,
-  tr:nth-child(6)::before,
-  tr:nth-child(7)::before,
-  tr:nth-child(8)::before,
-  tr:nth-child(9)::before,
-  tr:nth-child(10)::before,
-  tr:nth-child(11)::before {
-    content: "100%";
-    position: absolute;
-    top: 21px;
-    right: calc(100%);
-    color: #b2d8d8;
-    font-size: 8px;
-    padding-right: 4px;
-  }
-
-  tr:nth-child(2)::before {
-    content: "90%";
-  }
-  tr:nth-child(3)::before {
-    content: "80%";
-  }
-  tr:nth-child(4)::before {
-    content: "70%";
-  }
-  tr:nth-child(5)::before {
-    content: "60%";
-  }
-  tr:nth-child(6)::before {
-    content: "50%";
-  }
-  tr:nth-child(7)::before {
-    content: "40%";
-  }
-  tr:nth-child(8)::before {
-    content: "30%";
-  }
-  tr:nth-child(9)::before {
-    content: "20%";
-  }
-  tr:nth-child(10)::before {
-    content: "10%";
-  }
-  tr:nth-child(11)::before {
-    content: "0%";
   }
 </style>

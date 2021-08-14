@@ -36,7 +36,9 @@
     <p class="number">{number}</p>
   </div>
   <div class="graph-container">
-    <canvas id={canvas_id} width="108" height="108"> percentage </canvas>
+    <canvas id={canvas_id} width="108" height="108">
+      {title}: {percentage}%
+    </canvas>
     <span class="percentage">{percentage}<span>%</span></span>
   </div>
 </div>
