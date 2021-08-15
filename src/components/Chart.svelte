@@ -40,6 +40,7 @@
 
     monthIndex();
     async function monthIndex() {
+      let dotsList = [];
       await promise.then((res) => {
         res.map((el, index) => {
           ctx.save();
@@ -52,11 +53,21 @@
           const ratio = el.core_target / el.total;
           ctx.beginPath();
           ctx.arc(index * 54 + 52, 420 - ratio * 360 - 22, 3, 0, 2 * Math.PI);
+          dotsList.push({ x: index * 54 + 52, y: 420 - ratio * 360 - 22 });
           ctx.lineWidth = 0;
           ctx.strokeStyle = "orange";
           ctx.fillStyle = "orange";
           ctx.fill();
           ctx.stroke();
+        });
+
+        dotsList.map((dot, index) => {
+          if (dotsList[index + 1]) {
+            ctx.beginPath();
+            ctx.moveTo(dot.x, dot.y);
+            ctx.lineTo(dotsList[index + 1].x, dotsList[index + 1].y);
+            ctx.stroke();
+          }
         });
       });
     }
