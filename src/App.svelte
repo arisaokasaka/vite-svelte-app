@@ -24,7 +24,7 @@
         <Barometer
           barometer_color="chocolate"
           canvas_id="canvas_3"
-          title="20s"
+          title="TWENTIES"
           percentage={res.twenties.percentage}
           number={res.twenties.number}
         />
