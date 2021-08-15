@@ -38,16 +38,25 @@
       ctx.stroke();
     }
 
-    drawDots();
-    async function drawDots() {
+    monthIndex();
+    async function monthIndex() {
       await promise.then((res) => {
         res.map((el, index) => {
           ctx.save();
-          console.log(el, index);
-          ctx.translate(-90, index * 13.4 + 20);
+          ctx.fillStyle = "rgba(255, 255, 255, 0.466)";
+          ctx.translate(-90, index * 13.4);
           ctx.rotate(-0.08 * Math.PI);
-          ctx.fillText(`${el.month}`, index * 54 + 24, 420);
+          ctx.fillText(`${el.month}`, index * 54 + 24, 440);
           ctx.restore();
+
+          const ratio = el.core_target / el.total;
+          ctx.beginPath();
+          ctx.arc(index * 54 + 52, 420 - ratio * 360 - 22, 3, 0, 2 * Math.PI);
+          ctx.lineWidth = 0;
+          ctx.strokeStyle = "orange";
+          ctx.fillStyle = "orange";
+          ctx.fill();
+          ctx.stroke();
         });
       });
     }

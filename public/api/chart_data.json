@@ -8,7 +8,7 @@
         {
             "month": "2020-5-1",
             "total": 1217,
-            "core_target": 342
+            "core_target": 500
         },
         {
             "month": "2020-6-1",
@@ -23,7 +23,7 @@
         {
             "month": "2020-8-1",
             "total": 2309,
-            "core_target": 314
+            "core_target": 1762
         },
         {
             "month": "2020-9-1",
@@ -43,7 +43,7 @@
         {
             "month": "2020-12-1",
             "total": 4209,
-            "core_target": 436
+            "core_target": 1813
         },
         {
             "month": "2021-1-1",
@@ -53,12 +53,12 @@
         {
             "month": "2020-2-1",
             "total": 4209,
-            "core_target": 436
+            "core_target": 927
         },
         {
             "month": "2021-3-1",
             "total": 1239,
-            "core_target": 205
+            "core_target": 613
         }
     ]
 }
