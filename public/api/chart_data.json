@@ -49,6 +49,16 @@
             "month": "2021-1-1",
             "total": 1239,
             "core_target": 205
+        },
+        {
+            "month": "2020-2-1",
+            "total": 4209,
+            "core_target": 436
+        },
+        {
+            "month": "2021-3-1",
+            "total": 1239,
+            "core_target": 205
         }
     ]
 }

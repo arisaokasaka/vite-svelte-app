@@ -1,8 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
 
-  let chartData = getChartData();
-
+  let promise = getChartData();
   async function getChartData() {
     const res = await fetch("/api/chart_data.json");
     const data = await res.json();
@@ -37,6 +36,20 @@
       ctx.lineTo(652, -36 * index + 396);
       ctx.closePath();
       ctx.stroke();
+    }
+
+    drawDots();
+    async function drawDots() {
+      await promise.then((res) => {
+        res.map((el, index) => {
+          ctx.save();
+          console.log(el, index);
+          ctx.translate(-90, index * 13.4 + 20);
+          ctx.rotate(-0.08 * Math.PI);
+          ctx.fillText(`${el.month}`, index * 54 + 24, 420);
+          ctx.restore();
+        });
+      });
     }
   });
 </script>
